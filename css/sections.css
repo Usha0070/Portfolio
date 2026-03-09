@@ -262,29 +262,8 @@ body.dev .mbt-dev{color:var(--bg)}
   .mbt-opt{flex:1;text-align:center;padding:.5rem .8rem}
 }
 
-/* ══ Collab photo strip mobile ══ */
-@media(max-width:768px){
-  .collab-strip{grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1rem}
-  .collab-ph{height:110px;border-radius:8px}
-}
-@media(max-width:480px){
-  .collab-strip{grid-template-columns:repeat(3,1fr);gap:.4rem}
-  .collab-ph{height:90px}
-}
+/* ══ Achievement card mobile ══ */
+/* ach mobile handled in theme.css */
 
-/* ══ Skills section mobile refinements ══ */
-@media(max-width:768px){
-  .sk-grp{margin-bottom:1.1rem}
-  .sk-gl{font-size:.54rem;margin-bottom:.5rem}
-  .sc{font-size:.64rem;padding:.38rem .85rem}
-  .sk-chips{gap:.35rem}
-  .sk-half-title{font-size:1.2rem;margin-bottom:.2rem}
-  .sk-half-sub{font-size:.58rem;margin-bottom:1rem}
-}
-
-/* ══ Section headings — consistent mobile sizing ══ */
-@media(max-width:480px){
-  .proj-title{font-size:1rem}
-  .proj-links{flex-wrap:wrap;gap:.45rem}
-  .pl{font-size:.6rem;padding:.3rem .65rem}
-}
+/* ══ Philosophy / Story section mobile ══ */
+/* philosophy mobile handled in theme.css */

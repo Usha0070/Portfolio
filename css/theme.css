@@ -210,15 +210,15 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 /* ── Hero mobile ── */
 @media(max-width:1100px){.hero-r{display:none!important}}
 @media(max-width:768px){
-  #hero{padding:6rem 1.25rem 3rem;grid-template-columns:1fr;min-height:auto;background:var(--bg)}
+  #hero{padding:6rem 1.25rem 3.5rem;grid-template-columns:1fr;min-height:auto;background:var(--bg)}
   .hero-l{padding:0}
-  .hero-name{font-size:clamp(2.8rem,13vw,5rem);line-height:.9}
-  .hero-ew{font-size:.6rem;margin-bottom:1rem;flex-wrap:wrap}
-  .hero-tag{font-size:.9rem;line-height:1.65;margin-bottom:1.75rem}
-  .hero-badges{gap:.4rem;flex-wrap:wrap}
-  .badge{font-size:.54rem;padding:.3rem .8rem}
-  .hero-acts{flex-direction:column;gap:.65rem}
-  .hero-acts .btn{width:100%;justify-content:center;text-align:center;padding:.85rem 1.5rem}
+  .hero-name{font-size:clamp(3rem,14vw,5.5rem);line-height:.88}
+  .hero-ew{font-size:.6rem;margin-bottom:1.2rem}
+  .hero-tag{font-size:.95rem;margin-bottom:2rem}
+  .hero-badges{gap:.45rem}
+  .badge{font-size:.55rem;padding:.32rem .85rem}
+  .hero-acts{flex-direction:column;gap:.75rem}
+  .hero-acts .btn{width:100%;justify-content:center;text-align:center}
 }
 @media(max-width:480px){
   #hero{padding:5.5rem .9rem 2.5rem}
@@ -230,11 +230,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   .about-grid{grid-template-columns:1fr;border-radius:12px}
   .ab-pane+.ab-pane{border-left:none;border-top:1.5px solid var(--border)}
   .ab-pane{padding:2rem 1.5rem}
-  .ab-nums{gap:1rem;margin-top:1.5rem}
-  .ab-n{font-size:1.85rem}
-  .ab-nl{font-size:.55rem}
-  .ab-body{font-size:.88rem;line-height:1.78}
-  .ab-title{font-size:1.28rem}
+  .ab-nums{gap:1.2rem}
+  .ab-n{font-size:2rem}
 }
 
 /* ── Timeline mobile ── */
@@ -243,21 +240,13 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   .t-item{grid-template-columns:1fr;gap:.4rem;padding-bottom:2.5rem}
   .t-meta{display:flex;flex-wrap:wrap;gap:.6rem;align-items:baseline}
   .t-dot{left:-1.5rem;transform:translateX(-7px)}
-  .t-role{font-size:1rem;line-height:1.25}
-  .t-co{font-size:.78rem}
-  .t-date{font-size:.6rem}
-  .t-desc{font-size:.83rem;line-height:1.75}
-  .t-chip{font-size:.54rem}
+  .t-role{font-size:1.05rem}
+  .t-desc{font-size:.84rem}
 }
 
 /* ── Projects grid mobile ── */
 @media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
-@media(max-width:768px){
-  .proj-card{padding:1.5rem}
-  .proj-title{font-size:1.1rem;line-height:1.25}
-  .proj-desc{font-size:.85rem;line-height:1.7}
-  .proj-lang{font-size:.58rem;margin-bottom:.5rem}
-}
+@media(max-width:768px){.proj-card{padding:1.6rem}}
 
 /* ── Gallery mobile ── */
 @media(max-width:768px){
@@ -278,12 +267,6 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 /* ── Education mobile ── */
 @media(max-width:900px){.edu-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.edu-grid{grid-template-columns:1fr}}
-@media(max-width:768px){
-  .edu-c{padding:1.5rem}
-  .edu-d{font-size:.95rem}
-  .edu-i{font-size:.8rem}
-  .edu-n{font-size:.6rem}
-}
 @media(max-width:768px){
   .ach{display:flex;flex-direction:column;grid-template-columns:unset}
   .ach-img-wrap{width:100%;flex-shrink:0}
@@ -306,13 +289,10 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 
 /* ── Contact mobile ── */
 @media(max-width:768px){
-  .ct-big{font-size:clamp(1.9rem,10vw,3.2rem);line-height:1.1}
-  .ct-sub{font-size:.88rem;line-height:1.7;margin-bottom:1.75rem}
-  .ct-email{font-size:.7rem;padding:.8rem 1.25rem;width:100%;justify-content:center;box-sizing:border-box;margin-bottom:2rem}
+  .ct-big{font-size:clamp(2rem,10vw,3.5rem)}
+  .ct-email{font-size:.72rem;padding:.85rem 1.5rem;width:100%;justify-content:center;box-sizing:border-box}
   .cf-r{grid-template-columns:1fr}
   .ct-wrap{padding:0}
-  .cf input,.cf textarea{padding:.75rem 1rem;font-size:.88rem}
-  .cf-sub{padding:.9rem;font-size:.75rem}
 }
 @media(max-width:480px){
   .ct-big{font-size:clamp(1.8rem,12vw,2.8rem)}
@@ -329,14 +309,4 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
   body{cursor:auto}
   a,button{cursor:pointer}
   #scene{display:none}
-}
-
-/* ── Section headings mobile ── */
-@media(max-width:768px){
-  .sec-h{font-size:clamp(2rem,11vw,3.5rem)}
-  .sec-no{font-size:.58rem}
-  .sec-line{width:30px}
-}
-@media(max-width:480px){
-  .sec-h{font-size:clamp(1.8rem,12vw,3rem)}
 }
