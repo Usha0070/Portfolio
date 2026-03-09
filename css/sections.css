@@ -262,4 +262,26 @@ body.dev .mbt-dev{color:var(--bg)}
   .mbt-opt{flex:1;text-align:center;padding:.5rem .8rem}
 }
 
+/* ══ Achievement card mobile ══ */
+@media(max-width:768px){
+  .ach{grid-template-columns:1fr}
+  .ach-img{height:260px}
+  .ach-body{padding:1.5rem}
+}
 
+/* ══ Philosophy / Story section mobile ══ */
+@media(max-width:768px){
+  .philosophy-wrap{grid-template-columns:1fr;gap:1.5rem;overflow:visible}
+  .ph-quote{padding:1.5rem}
+  .ph-q-mark{font-size:3rem}
+  .ph-text{font-size:1rem;line-height:1.65}
+  .ph-cards{gap:1rem}
+  .ph-card{padding:1.1rem;gap:.85rem}
+  .ph-card:hover{transform:none}
+  .ph-ic{font-size:1.4rem}
+  .ph-cl{font-size:.85rem}
+  .ph-ct p{font-size:.85rem;line-height:1.6}
+}
+@media(max-width:480px){
+  .ph-card{flex-direction:row;align-items:flex-start}
+}
