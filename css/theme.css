@@ -115,6 +115,10 @@ hr.div{border:none;height:1px;background:linear-gradient(90deg,transparent,var(-
 #lb-x{position:absolute;top:1.5rem;right:1.5rem;background:var(--surface);border:1.5px solid var(--border-hi);border-radius:50%;width:42px;height:42px;cursor:pointer;color:var(--text-1);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s}
 #lb-x:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 
+/* ── Global overflow fix — prevents canvas bleed & charset injection leak ── */
+html{overflow-x:hidden}
+body{overflow-x:hidden;min-height:100vh;min-height:100dvh}
+
 /* footer */
 footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:10;transition:border-color .5s}
 .ft{font-family:var(--font-mono);font-size:.6rem;color:var(--text-3);letter-spacing:.05em}
@@ -128,19 +132,26 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 ══════════════════════════════════════════════ */
 
 /* ── Nav mobile ── */
-@media(max-width:768px){
-  #nav{padding:0 1rem;height:60px}
-  .nav-logo{font-size:.95rem}
-  .nav-logo .sub{font-size:.48rem;letter-spacing:.1em}
+@media(max-width:900px){
   nav ul{display:none}
   .nav-si{display:none}
   .cv-btn{display:none}
   #mob-btn{display:flex;align-items:center;justify-content:center}
+  /* hide nav toggle on compressed — banner toggle takes over */
+  #toggle{display:none}
+}
+@media(min-width:901px){
+  /* banner toggle redundant on desktop — hide it, nav toggle handles it */
+  #mode-banner .mbt-track{display:flex}
+}
+@media(max-width:768px){
+  #nav{padding:0 1rem;height:60px}
+  .nav-logo{font-size:.95rem}
+  .nav-logo .sub{font-size:.48rem;letter-spacing:.1em}
   #toggle{padding:3px}
   .tgl-o{font-size:.48rem;padding:.28rem .6rem;letter-spacing:.04em}
 }
 @media(max-width:400px){
-  /* On very small screens: hide "Instructor" text, only show active label */
   .tgl-o.devt{display:none}
   body.dev .tgl-o.devt{display:block}
   body.dev .tgl-o.inst{display:none}
@@ -257,19 +268,23 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:900px){.edu-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.edu-grid{grid-template-columns:1fr}}
 @media(max-width:768px){
-  .ach{grid-template-columns:1fr}
-  .ach-img{height:200px;object-position:top center}
-  .ach-body{padding:1.5rem}
+  .ach{display:flex;flex-direction:column;grid-template-columns:unset}
+  .ach-img-wrap{width:100%;flex-shrink:0}
+  .ach-img{height:220px;width:100%;object-position:top center}
+  .ach-body{padding:1.5rem;width:100%;box-sizing:border-box}
   .ach-t{font-size:1.05rem}
+  .ach-s{font-size:.84rem}
 }
 
 /* ── Philosophy mobile ── */
 @media(max-width:768px){
-  .philosophy-wrap{grid-template-columns:1fr;gap:1.5rem}
-  .ph-quote{padding:2rem 1.5rem}
-  .ph-text{font-size:1.05rem}
-  .ph-cards{gap:1rem}
-  .ph-card{padding:1.5rem}
+  .philosophy-wrap{display:flex;flex-direction:column;gap:1.5rem}
+  .ph-quote{width:100%;box-sizing:border-box;padding:1.75rem 1.25rem;overflow:visible}
+  .ph-q-mark{font-size:3.5rem}
+  .ph-text{font-size:1rem;line-height:1.7;word-break:break-word;overflow-wrap:break-word;white-space:normal}
+  .ph-cards{gap:1rem;width:100%}
+  .ph-card{padding:1.25rem;flex-direction:row;gap:1rem;width:100%;box-sizing:border-box}
+  .ph-ct p{font-size:.84rem}
 }
 
 /* ── Contact mobile ── */

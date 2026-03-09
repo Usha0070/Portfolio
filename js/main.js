@@ -118,13 +118,27 @@ function applyMode(dev){
   document.getElementById('ci').style.opacity=dev?'0':'0.9';
   document.getElementById('cd').style.opacity=dev?'0.9':'0';
   // skills swap
-  const isMob=window.innerWidth<=768;
+  const isMob=window.innerWidth<=900;
   if(isMob){
     $('sk-inst').classList.toggle('mob-hidden',dev);
     $('sk-dev').classList.toggle('mob-active',dev);
   } else {
-    $('sk-inst').style.cssText=dev?'position:absolute;inset:0;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .45s ease,transform .45s ease':'position:absolute;inset:0;opacity:1;transform:none;pointer-events:all;transition:opacity .45s ease,transform .45s ease';
-    $('sk-dev').style.cssText=dev?'position:absolute;inset:0;opacity:1;transform:none;pointer-events:all;transition:opacity .45s ease,transform .45s ease':'position:absolute;inset:0;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .45s ease,transform .45s ease';
+    // Desktop: opacity crossfade. Measure heights by temporarily making both visible
+    const skInst=$('sk-inst'), skDev=$('sk-dev'), skWrap=$('sk-wrap');
+    // Temporarily make both full opacity to measure
+    skDev.style.cssText='position:absolute;inset:0;width:100%;opacity:1;transform:none;pointer-events:none;transition:none';
+    skInst.style.cssText='position:absolute;inset:0;width:100%;opacity:1;transform:none;pointer-events:none;transition:none';
+    requestAnimationFrame(()=>{
+      const h=dev?skDev.scrollHeight:skInst.scrollHeight;
+      skWrap.style.minHeight=Math.max(h,200)+'px';
+      // Now apply the real states with transitions
+      skInst.style.cssText=dev
+        ?'position:absolute;inset:0;width:100%;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .45s ease,transform .45s ease'
+        :'position:absolute;inset:0;width:100%;opacity:1;transform:none;pointer-events:all;transition:opacity .45s ease,transform .45s ease';
+      skDev.style.cssText=dev
+        ?'position:absolute;inset:0;width:100%;opacity:1;transform:none;pointer-events:all;transition:opacity .45s ease,transform .45s ease'
+        :'position:absolute;inset:0;width:100%;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .45s ease,transform .45s ease';
+    });
   }
 }
 
@@ -132,7 +146,21 @@ const tog=document.getElementById('toggle');
 function doToggle(){runGlitch(()=>{_dev=!_dev;applyMode(_dev);});}
 tog.addEventListener('click',doToggle);
 tog.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();doToggle();}});
+// Banner toggle — same action
+const bannerTog=document.getElementById('mode-banner-toggle');
+if(bannerTog){
+  bannerTog.addEventListener('click',doToggle);
+  bannerTog.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();doToggle();}});
+}
 setTimeout(()=>{posPill(false);document.getElementById('ci').style.opacity='0.9';document.getElementById('cd').style.opacity='0';},150);
+// Init sk-wrap height on desktop
+setTimeout(()=>{
+  if(window.innerWidth>900){
+    const skInst=document.getElementById('sk-inst');
+    const skWrap=document.getElementById('sk-wrap');
+    if(skInst&&skWrap){skWrap.style.minHeight=Math.max(skInst.scrollHeight,200)+'px';}
+  }
+},200);
 
 /* ═══ GALLERY ═══ */
 window.addEventListener('load',()=>{
