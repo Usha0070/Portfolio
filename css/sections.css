@@ -262,26 +262,29 @@ body.dev .mbt-dev{color:var(--bg)}
   .mbt-opt{flex:1;text-align:center;padding:.5rem .8rem}
 }
 
-/* ══ Achievement card mobile ══ */
+/* ══ Collab photo strip mobile ══ */
 @media(max-width:768px){
-  .ach{grid-template-columns:1fr}
-  .ach-img{height:260px}
-  .ach-body{padding:1.5rem}
-}
-
-/* ══ Philosophy / Story section mobile ══ */
-@media(max-width:768px){
-  .philosophy-wrap{grid-template-columns:1fr;gap:1.5rem;overflow:visible}
-  .ph-quote{padding:1.5rem}
-  .ph-q-mark{font-size:3rem}
-  .ph-text{font-size:1rem;line-height:1.65}
-  .ph-cards{gap:1rem}
-  .ph-card{padding:1.1rem;gap:.85rem}
-  .ph-card:hover{transform:none}
-  .ph-ic{font-size:1.4rem}
-  .ph-cl{font-size:.85rem}
-  .ph-ct p{font-size:.85rem;line-height:1.6}
+  .collab-strip{grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1rem}
+  .collab-ph{height:110px;border-radius:8px}
 }
 @media(max-width:480px){
-  .ph-card{flex-direction:row;align-items:flex-start}
+  .collab-strip{grid-template-columns:repeat(3,1fr);gap:.4rem}
+  .collab-ph{height:90px}
+}
+
+/* ══ Skills section mobile refinements ══ */
+@media(max-width:768px){
+  .sk-grp{margin-bottom:1.1rem}
+  .sk-gl{font-size:.54rem;margin-bottom:.5rem}
+  .sc{font-size:.64rem;padding:.38rem .85rem}
+  .sk-chips{gap:.35rem}
+  .sk-half-title{font-size:1.2rem;margin-bottom:.2rem}
+  .sk-half-sub{font-size:.58rem;margin-bottom:1rem}
+}
+
+/* ══ Section headings — consistent mobile sizing ══ */
+@media(max-width:480px){
+  .proj-title{font-size:1rem}
+  .proj-links{flex-wrap:wrap;gap:.45rem}
+  .pl{font-size:.6rem;padding:.3rem .65rem}
 }
