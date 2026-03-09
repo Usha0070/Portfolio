@@ -268,8 +268,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:900px){.edu-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.edu-grid{grid-template-columns:1fr}}
 @media(max-width:768px){
-  .ach{display:flex;flex-direction:column;grid-template-columns:unset}
-  .ach-img-wrap{width:100%;flex-shrink:0}
+  .ach{flex-direction:column!important}
+  .ach-img-wrap{width:100%!important;flex-shrink:0}
   .ach-img{height:220px;width:100%;object-position:top center}
   .ach-body{padding:1.5rem;width:100%;box-sizing:border-box}
   .ach-t{font-size:1.05rem}
@@ -278,8 +278,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify
 
 /* ── Philosophy mobile ── */
 @media(max-width:768px){
-  .philosophy-wrap{display:flex;flex-direction:column;gap:1.5rem}
-  .ph-quote{width:100%;box-sizing:border-box;padding:1.75rem 1.25rem;overflow:visible}
+  .philosophy-wrap{flex-direction:column!important;gap:1.5rem}
+  .ph-quote{width:100%!important;flex:none!important;box-sizing:border-box;padding:1.75rem 1.25rem;overflow:visible}
   .ph-q-mark{font-size:3.5rem}
   .ph-text{font-size:1rem;line-height:1.7;word-break:break-word;overflow-wrap:break-word;white-space:normal}
   .ph-cards{gap:1rem;width:100%}
